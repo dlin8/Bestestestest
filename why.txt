@@ -1,0 +1,31 @@
+Bestestestest -- Derek Lin, Richard Lin, Dylan Wright
+APCS2 pd5
+HW10 -- Justify
+2016-03-09
+
+The number of levels to split an array of n elements to arrays of one elements is log2(n).
+For example, for an array of length 8:
+START:   12345678
+LEVEL 1: 1234 5678
+LEVEL 2: 12 34 56 78
+LEVEL 3: 1 2 3 4 5 6 7 8
+2^LEVELS = array length
+2^3 = 8
+The same applies for the number of levels to merge arrays of one elements to an array of n elements.
+LEVEL 3(S): 1 2 3 4 5 6 7 8
+LEVEL 4(1): 12 34 56 78
+LEVEL 5(2): 1234 5678
+LEVEL 6(3): 123456789
+Therefore the the total number of levels in any merge sort is 2log2(n).
+Splitting the array of n elements into n elments of 1 takes O(n).
+For the levels at which the array is being merged, the worst run possible would involve going through every element when merging with the final element of each array being compared to each other. In contrast to the best run possible where all elements in the first array are less than the elements in the second and once all of the elements in the first array are depleted, the entire second array can then be pushed into the new array without any analysis.
+The worst run possible for merging two arrays of (n/2) length therefore would take O(n) if every element is being analyzed.
+The same is true for any level of merging because a total number of n elements would be analyzed if every group has the worst run.
+(n/8) + (n/8) | (n/8) + (n/8) | (n/8) + (n/8) | (n/8) + (n/8) = 4 * 2 * (n/8) = n
+(n/4) + (n/4) | (n/4) + (n/4) = 2 * 2 * (n/4) = n
+(n/2) + (n/2) = 2*(n/2) = n
+Taking all of this into account, the worst case for a merge sort would be:
+Splitting: log2(n) * O(1) = O(1).
+Merging: log2(n) * O(n) = O(nlog(n)).
+O(n) + O(nlog(n)) = O(n(log(n) + 1)) = O(nlog(n)).
+O(nlog(n)).
