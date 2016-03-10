@@ -1,3 +1,8 @@
+// Team Bestestestes -- Derek Lin, Richard Lin, Dylan Wright
+// APCS2 pd5
+// HW11 -- Wrapping It Up
+// 2016-03-10
+
 /*======================================
   class MergeSortTester
 
